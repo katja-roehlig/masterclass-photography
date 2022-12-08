@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* Tag-Selectors *************************************************** */
+html {
+  font-size: 100%;
+}
+
+/* Class-Selectors ************************************************* */
+.header {
+  height: 40rem;
+  background-image: linear-gradient(-5.71deg, white 49.9%, transparent 50.1%),
+    url("assets/img/pexels-benjamin-suter-3617500.jpg");
+
+  background-size: 100vw 10vw, cover;
+  background-position: center bottom, center center;
+  background-repeat: no-repeat;
+}
