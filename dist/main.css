@@ -89,7 +89,8 @@ html {
   content: "";
   position: absolute;
   bottom: -9vw;
-  width: 100vw;
+  right: 0;
+  left: 0;
   background-size: 100% auto;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -102,16 +103,16 @@ html {
 }
 
 .header::after {
-  height: 33vw;
+  min-height: 33vw;
   background-image: url("../assets/img/pexels-benjamin-suter-3617500-mountains.webp");
 }
 
 .header__slant {
-  right: 0px;
-  left: 0px;
+  right: 0;
+  left: 0;
   height: 10vw;
   position: absolute;
-  bottom: 0;
+  bottom: 0%;
   background-image: linear-gradient(-5.71deg, white 49.8%, transparent 50.2%);
   background-size: 100vw 10vw;
   background-position: center 0%;
@@ -199,6 +200,70 @@ html {
 .nav__item--menu .nav__item-link:hover, .nav__item--logo .nav__item-link:hover {
   border-bottom: none;
   color: red;
+}
+
+.motivation {
+  width: 100vw;
+  min-height: 30rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2rem;
+  position: relative;
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+}
+
+.motivation__article {
+  width: 25ch;
+  align-self: center;
+  margin-left: 16rem;
+}
+
+.motivation__img {
+  position: relative;
+}
+
+.motivation__text {
+  justify-self: end;
+  padding-top: 0.8rem;
+}
+
+.motivation__img-container {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.motivation__img-container--back {
+  width: 50vw;
+  height: 31.5vw;
+  position: relative;
+  background-image: url("../assets/img/pexels-simon-migaj-747964.jpg");
+}
+.motivation__img-container--middle {
+  width: 22vw;
+  height: 33vw;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  background-image: url("../assets/img/pexels-jaime-reimer-2662086.jpg");
+}
+.motivation__img-container--front {
+  width: 16vw;
+  height: 21.8vw;
+  position: absolute;
+  top: 40%;
+  right: 75%;
+  background-image: url("../assets/img/pexels-jacub-gomez-1152043.jpg");
+}
+.motivation__img-container--front, .motivation__img-container--middle, .motivation__img-container--back {
+  transition: transform 0.3s ease-in-out;
+}
+.motivation__img-container--front:hover, .motivation__img-container--middle:hover, .motivation__img-container--back:hover {
+  border: 0.7rem solid transparent;
+  box-shadow: 0 0 0 0.4rem rgb(0, 226, 156);
+  z-index: 2;
+  transform: scale(1.2);
 }
 
 .icon {
