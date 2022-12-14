@@ -1,0 +1,19 @@
+/** Breakpoints */
+$screen-xl: 120em; /* 1920px oder schmaler */
+$screen-l: 90em; /* 1440px oder schmaler */
+$screen-m: 48em; /*768px oder schmaler */
+$screen-s: 36em; /* 580px oder schmaler */
+$screen-xs: 25em; /* 400px oder schmaler */
+
+@media (max-width: $screen-xl) {
+}
+@media (max-width: $screen-l) {
+}
+@media (max-width: $screen-m) {
+}
+@media (max-width: $screen-s) {
+}
+@media (max-width: $screen-xs) {
+}
+
+$accent-color: rgb(0, 226, 156);

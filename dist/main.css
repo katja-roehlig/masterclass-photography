@@ -119,6 +119,12 @@ html {
   z-index: 1;
 }
 
+/** Breakpoints */
+/* 1920px oder schmaler */
+/* 1440px oder schmaler */
+/*768px oder schmaler */
+/* 580px oder schmaler */
+/* 400px oder schmaler */
 .nav__item {
   list-style-type: none;
   display: block;

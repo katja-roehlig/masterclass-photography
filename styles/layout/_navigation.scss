@@ -1,20 +1,22 @@
+@use "../abstracts" as *;
+
 .nav__item {
   list-style-type: none;
   display: block;
   float: left;
   font-size: 1.5rem;
-  @media (max-width: 36em) {
+  @media (max-width: $screen-s) {
     display: none;
   }
 
   &--menu {
     float: right;
     font-size: 3.5rem;
-    @media (max-width: 36em) {
+    @media (max-width: $screen-s) {
       display: block;
       font-size: 2rem;
     }
-    @media (max-width: 25em) {
+    @media (max-width: $screen-xs) {
       font-size: 1.5rem;
     }
   }
@@ -23,10 +25,10 @@
     font-size: 3.5rem;
     margin-top: 0;
     padding-right: 1em;
-    @media (max-width: 36em) {
+    @media (max-width: $screen-s) {
       display: block;
     }
-    @media (max-width: 25em) {
+    @media (max-width: $screen-xs) {
       font-size: 1.5rem;
     }
   }
@@ -40,14 +42,14 @@
   margin-top: 2rem;
   margin-inline: 2rem;
   display: block;
-  @media (max-width: 90em) {
+  @media (max-width: $screen-l) {
     margin-inline: 0.8rem;
   }
-  @media (max-width: 48em) {
+  @media (max-width: $screen-m) {
     margin-inline: 0.3rem;
   }
   &:hover {
-    border-bottom: 0.15rem solid rgb(0, 226, 156);
+    border-bottom: 0.15rem solid $accent-color;
   }
   .nav__item--menu &,
   .nav__item--logo & {
