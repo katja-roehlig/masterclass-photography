@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Fonts *********************************************************** */
 @font-face {
   font-family: "Jost";
@@ -20,10 +21,28 @@ html {
   font-family: "Jost";
 }
 
+/** Breakpoints */
+/* 1920px oder schmaler */
+/* 1440px oder schmaler */
+/* 1200px oder schmaler */
+/* 1000px oder schmaler*/
+/*768px oder schmaler */
+/* 580px oder schmaler */
+/* 400px oder schmaler */
 .container {
-  width: 90vw;
-  height: 10vw;
+  width: 80vw;
+  /*height: 10vw;*/
   margin: 0 auto;
+}
+.container::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+@media (max-width: 90em) {
+  .container {
+    width: 90vw;
+  }
 }
 
 .header {
@@ -120,17 +139,21 @@ html {
   z-index: 1;
 }
 
-/** Breakpoints */
-/* 1920px oder schmaler */
-/* 1440px oder schmaler */
-/*768px oder schmaler */
-/* 580px oder schmaler */
-/* 400px oder schmaler */
 .nav__item {
   list-style-type: none;
   display: block;
   float: left;
   font-size: 1.5rem;
+}
+@media (max-width: 90em) {
+  .nav__item {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 48em) {
+  .nav__item {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 36em) {
   .nav__item {
@@ -140,6 +163,11 @@ html {
 .nav__item--menu {
   float: right;
   font-size: 3.5rem;
+}
+@media (max-width: 90em) {
+  .nav__item--menu {
+    font-size: 3rem;
+  }
 }
 @media (max-width: 36em) {
   .nav__item--menu {
@@ -157,9 +185,16 @@ html {
   margin-top: 0;
   padding-right: 1em;
 }
+@media (max-width: 90em) {
+  .nav__item--logo {
+    font-size: 3rem;
+    padding-right: 0.5rem;
+  }
+}
 @media (max-width: 36em) {
   .nav__item--logo {
     display: block;
+    font-size: 2rem;
   }
 }
 @media (max-width: 25em) {
@@ -172,18 +207,14 @@ html {
   color: white;
   text-shadow: 0 0 0.6rem black;
   text-decoration: none;
-  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  padding: 0.6rem 0.25rem 0.25rem 0rem;
   margin-top: 2rem;
   margin-inline: 2rem;
   display: block;
-  /*&--logo:hover {
-    border-bottom: none;
-    color: red;
-  }*/
 }
 @media (max-width: 90em) {
   .nav__item-link {
-    margin-inline: 0.8rem;
+    margin-inline: 0.6rem;
   }
 }
 @media (max-width: 48em) {
@@ -194,76 +225,23 @@ html {
 .nav__item-link:hover {
   border-bottom: 0.15rem solid rgb(0, 226, 156);
 }
-.nav__item--menu .nav__item-link, .nav__item--logo .nav__item-link {
+.nav__item-link--logo {
   margin-top: 0.6rem;
+  margin-left: 0;
+  padding-left: 0;
 }
-.nav__item--menu .nav__item-link:hover, .nav__item--logo .nav__item-link:hover {
+.nav__item-link--logo:hover {
   border-bottom: none;
   color: red;
 }
-
-.motivation {
-  width: 100vw;
-  min-height: 30rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 2rem;
-  position: relative;
-  padding-bottom: 5rem;
-  margin-bottom: 5rem;
+.nav__item-link--menu {
+  margin-right: 0;
+  padding-right: 0;
+  margin-top: 0.6rem;
 }
-
-.motivation__article {
-  width: 25ch;
-  align-self: center;
-  margin-left: 16rem;
-}
-
-.motivation__img {
-  position: relative;
-}
-
-.motivation__text {
-  justify-self: end;
-  padding-top: 0.8rem;
-}
-
-.motivation__img-container {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-.motivation__img-container--back {
-  width: 50vw;
-  height: 31.5vw;
-  position: relative;
-  background-image: url("../assets/img/pexels-simon-migaj-747964.jpg");
-}
-.motivation__img-container--middle {
-  width: 22vw;
-  height: 33vw;
-  position: absolute;
-  top: 25%;
-  right: 25%;
-  background-image: url("../assets/img/pexels-jaime-reimer-2662086.jpg");
-}
-.motivation__img-container--front {
-  width: 16vw;
-  height: 21.8vw;
-  position: absolute;
-  top: 40%;
-  right: 75%;
-  background-image: url("../assets/img/pexels-jacub-gomez-1152043.jpg");
-}
-.motivation__img-container--front, .motivation__img-container--middle, .motivation__img-container--back {
-  transition: transform 0.3s ease-in-out;
-}
-.motivation__img-container--front:hover, .motivation__img-container--middle:hover, .motivation__img-container--back:hover {
-  border: 0.7rem solid transparent;
-  box-shadow: 0 0 0 0.4rem rgb(0, 226, 156);
-  z-index: 2;
-  transform: scale(1.2);
+.nav__item-link--menu:hover {
+  border-bottom: none;
+  color: red;
 }
 
 .icon {
@@ -272,6 +250,145 @@ html {
   vertical-align: middle;
   position: relative;
   top: -0.075em;
+}
+
+/* Geschützte Variable für diese Datei */
+.motivation {
+  margin-top: 3rem;
+}
+
+.motivation__heading {
+  color: hsl(191deg, 34%, 23%);
+  font-weight: 500;
+  font-size: 2rem;
+}
+.motivation__heading::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.2rem;
+  background-color: hsl(191deg, 34%, 43%);
+  margin-bottom: 0.8rem;
+}
+@media (max-width: 63em) {
+  .motivation__heading {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 63em) {
+  .motivation__heading {
+    font-size: 1.2rem;
+  }
+}
+
+.motivation__text {
+  color: hsl(191deg, 34%, 23%);
+  margin-top: 0.8rem;
+}
+
+.motivation__column-text {
+  float: left;
+  width: 33.33%;
+  padding-right: 5rem;
+  padding-top: 3rem;
+  font-size: 1.1rem;
+}
+@media (max-width: 75em) {
+  .motivation__column-text {
+    padding-right: 2rem;
+  }
+}
+@media (max-width: 63em) {
+  .motivation__column-text {
+    padding-right: 0.5rem;
+    width: 50%;
+    padding-top: 0;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 48em) {
+  .motivation__column-text {
+    width: 100%;
+    float: none;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 25em) {
+  .motivation__column-text {
+    font-size: 0.9rem;
+  }
+}
+
+.motivation__column-img {
+  float: left;
+  width: 66%;
+  height: clamp(10rem, 35vw + 10rem, 50rem);
+  position: relative;
+  /** param $top in rem; param $left in % **/
+}
+@media (max-width: 63em) {
+  .motivation__column-img {
+    width: 50%;
+    height: clamp(10rem, 25vw + 10rem, 50rem);
+  }
+}
+@media (max-width: 48em) {
+  .motivation__column-img {
+    width: 80%;
+    float: none;
+    height: clamp(10rem, 40vw + 10rem, 50rem);
+  }
+}
+@media (max-width: 25em) {
+  .motivation__column-img {
+    width: 95%;
+    height: clamp(10rem, 45vw + 10rem, 50rem);
+  }
+}
+.motivation__column-img .motivation__image {
+  width: 50%;
+  position: absolute;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+  box-sizing: content-box;
+  filter: grayscale(70%);
+  transition: filter 0.4s ease-in-out, transform 0.2s ease-in-out;
+}
+.motivation__column-img .motivation__image--front {
+  width: 37%;
+  z-index: 1;
+  top: 10rem;
+  left: 10%;
+}
+.motivation__column-img .motivation__image--front:hover {
+  top: 9.34rem;
+  left: calc(10% - 0.66rem);
+}
+.motivation__column-img .motivation__image--middle {
+  width: 42%;
+  z-index: 2;
+  top: 5rem;
+  left: 42%;
+}
+.motivation__column-img .motivation__image--middle:hover {
+  top: 4.34rem;
+  left: calc(42% - 0.66rem);
+}
+.motivation__column-img .motivation__image--back {
+  width: 70%;
+  z-index: 0;
+  top: 0rem;
+  left: 30%;
+}
+.motivation__column-img .motivation__image--back:hover {
+  top: -0.66rem;
+  left: calc(30% - 0.66rem);
+}
+.motivation__column-img .motivation__image:hover {
+  filter: grayscale(0%);
+  border: 0.33rem solid rgb(0, 226, 156);
+  padding: 0.33rem;
+  transform: scale(1.1);
+  z-index: 3;
 }
 
 /*# sourceMappingURL=main.css.map */

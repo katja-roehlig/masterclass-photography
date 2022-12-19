@@ -1,0 +1,120 @@
+@use "../abstracts/" as *;
+
+/* Geschützte Variable für diese Datei */
+$-img-hover-padding: 0.33rem;
+$-img-hover-border: 0.33rem;
+
+.motivation {
+  margin-top: 3rem;
+}
+.motivation__heading {
+  color: $text-color;
+  font-weight: 500;
+  font-size: 2rem;
+  &::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: $text-color-light;
+    margin-bottom: 0.8rem;
+  }
+  @media (max-width: $screen-ms) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: $screen-ms) {
+    font-size: 1.2rem;
+  }
+}
+.motivation__text {
+  color: $text-color;
+  margin-top: 0.8rem;
+}
+
+.motivation__column-text {
+  float: left;
+  width: 33.33%;
+  padding-right: 5rem;
+  padding-top: 3rem;
+  font-size: 1.1rem;
+
+  @media (max-width: $screen-ml) {
+    padding-right: 2rem;
+  }
+  @media (max-width: $screen-ms) {
+    padding-right: 0.5rem;
+    width: 50%;
+    padding-top: 0;
+    font-size: 1rem;
+  }
+  @media (max-width: $screen-m) {
+    width: 100%;
+    float: none;
+    padding-bottom: 2rem;
+  }
+  @media (max-width: $screen-xs) {
+    font-size: 0.9rem;
+  }
+}
+.motivation__column-img {
+  float: left;
+  width: 66%;
+  height: clamp(10rem, calc(35vw + 10rem), 50rem);
+  position: relative;
+
+  @media (max-width: $screen-ms) {
+    width: 50%;
+    height: clamp(10rem, calc(25vw + 10rem), 50rem);
+  }
+  @media (max-width: $screen-m) {
+    width: 80%;
+    float: none;
+    height: clamp(10rem, calc(40vw + 10rem), 50rem);
+  }
+  @media (max-width: $screen-xs) {
+    width: 95%;
+    height: clamp(10rem, calc(45vw + 10rem), 50rem);
+  }
+
+  /** param $top in rem; param $left in % **/
+  @mixin motivation__image-position($top, $left) {
+    top: $top;
+    left: $left;
+    $hover-offset: $-img-hover-border + $-img-hover-padding;
+    &:hover {
+      top: $top - $hover-offset;
+      left: calc(#{$left} - #{$hover-offset});
+    }
+  }
+  .motivation__image {
+    width: 50%;
+    position: absolute;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    box-sizing: content-box;
+    filter: grayscale(70%);
+    transition: filter 0.4s ease-in-out, transform 0.2s ease-in-out;
+
+    &--front {
+      width: 37%;
+      z-index: 1;
+      @include motivation__image-position(10rem, 10%);
+    }
+    &--middle {
+      width: 42%;
+      z-index: 2;
+      @include motivation__image-position(5rem, 42%);
+    }
+    &--back {
+      width: 70%;
+      z-index: 0;
+      @include motivation__image-position(0rem, 30%);
+    }
+    &:hover {
+      filter: grayscale(0%);
+      border: $-img-hover-border solid $accent-color;
+      padding: $-img-hover-padding;
+      transform: scale(1.1);
+      z-index: 3;
+    }
+  }
+}
