@@ -1,0 +1,48 @@
+@use "../abstracts/" as *;
+
+.tours {
+  background-color: $background-color;
+  height: 30rem;
+  position: relative;
+
+  &::before {
+    content: "Tame the wild";
+    color: $background-color;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 10rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 0 0 1.5px rgba(255, 255, 255, 0.691);
+  }
+
+  /*&::before {
+    @supports (-webkit-text-stroke: 1px white) or (text-stroke: 1px white) {
+      -webkit-text-stroke: 1px white;
+      text-stroke: 1px white;
+      text-shadow: none;
+    }
+  }
+
+  &::after {
+    @supports (-webkit-text-stroke: 1px transparent) or
+      (text-stroke: 1px transparent) {
+      -webkit-text-stroke: 1px transparent;
+      text-stroke: 1px transparent;
+      text-shadow: none;
+    }
+  }*/
+}
+
+.tours__heading {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  padding-block: 4rem;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
